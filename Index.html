@@ -6,14 +6,37 @@
     <title>Meu Site</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
     <style>
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fundo preto */
+            color: #ffffff; /* Texto branco */
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-y: scroll; /* Habilitar barra de rolagem vertical */
+            min-height: 100vh; /* Altura mínima do corpo da página */
+        }
+
+        /* Estilos para a barra de rolagem vertical */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #f4a538; /* Fundo da barra */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #7c8773; /* Cor do retângulo na barra */
+            border-radius: 0; /* Sem bordas arredondadas */
+        }
+
         /* Estilos para o cabeçalho */
         header {
-            background-color: #000000;
-            color: #fff;
+            background-color: #000000; /* Fundo preto */
             text-align: center;
             padding: 20px;
-            position: relative; /* Adicionado para posicionar a logo */
-            font-family: 'Space Grotesk', sans-serif; /* Aplicar a fonte */
+            position: fixed; /* Fixando o cabeçalho no topo */
+            width: 100%;
+            top: 0; /* Cobrindo toda a superfície superior */
+            z-index: 1; /* Garantindo que o cabeçalho fique na frente do conteúdo */
         }
 
         /* Estilos para a imagem de fundo do cabeçalho */
@@ -22,26 +45,96 @@
             height: auto;
         }
 
-        /* Estilos para a logo com fade */
+        /* Estilos para a logo com fade e glow */
         #logo {
             position: absolute;
-            top: 40%; /* Ajuste o valor para centralizar verticalmente */
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centralizar tanto vertical quanto horizontalmente */
-            opacity: 0;
-            animation: fade 2s ease-in-out forwards;
-            max-width: 25%; /* Defina a largura máxima da logo */
-            height: auto; /* Mantenha a proporção da imagem */
+            top: 50%; /* Centralizando verticalmente */
+            left: 50%; /* Centralizando horizontalmente */
+            transform: translate(-50%, -50%);
+            max-width: 25%;
+            height: auto;
+            filter: brightness(1); /* Remover brilho inicial */
+            opacity: 0; /* Ocultar logo inicialmente */
+            transition: filter 0.3s, opacity 1s, box-shadow 0.3s;
+            animation: fade-in 2s ease-in-out forwards; /* Efeito de fade-in */
         }
 
-        /* Animação de fade */
-        @keyframes fade {
+        /* Efeito fade-in da logo */
+        #logo.loaded {
+            opacity: 1;
+        }
+
+        /* Efeito glow ao passar o mouse */
+        #logo:hover {
+            filter: brightness(1.4) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+        }
+
+        /* Efeito de fade-in */
+        @keyframes fade-in {
             from {
                 opacity: 0;
             }
             to {
                 opacity: 1;
             }
+        }
+
+        /* Estilos para o menu */
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; /* Largura total */
+            text-align: center; /* Centralizar o conteúdo */
+            font-size: 18px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; /* Remover a margem à direita do último item */
+        }
+
+        nav ul li a {
+            color: #ffffff; /* Texto do menu branco */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff80; /* Cor com transparência para o efeito de hover */
+        }
+
+        /* Estilos para o conteúdo abaixo do cabeçalho */
+        .content {
+            margin-top: 300px; /* Espaçamento superior para evitar que fique ocultado pelo cabeçalho fixo */
+            text-align: center;
+        }
+
+        .content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+        }
+
+        .content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -51,14 +144,26 @@
         <!-- Imagem de fundo do cabeçalho -->
         <img class="background-img" src="Assets/Asset 17.png" alt="Imagem de Fundo do Cabeçalho">
 
-        <!-- Logo com efeito fade -->
-        <img id="logo" src="Assets/Logo nova.png" alt="Logo nova.png">
-        
-        <h1><strong>Bem-vindo ao meu site</strong></h1>
-        <p>Estamos em obras, mas voltaremos em breve! Aguarde!</p>
-    </header>
+        <!-- Logo com efeito fade e glow -->
+        <img id="logo" class="loaded" src="Assets/Logo nova.png" alt="Logo nova.png">
 
-    <!-- Conteúdo do corpo do site viria aqui -->
+        <!-- Menu -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Aulas</a></li>
+                <li><a href="#">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Conteúdo do corpo do site -->
+    <div class="content">
+        <h1>Bem-vindos ao meu site</h1>
+        <h2>Estamos em obras</h2>
+        <p class="emoji">🛠️</p>
+    </div>
 
 </body>
 </html>
