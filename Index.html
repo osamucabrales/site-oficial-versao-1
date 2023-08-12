@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
+    <style>
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Adicionado para posicionar a logo */
+            font-family: 'Space Grotesk', sans-serif; /* Aplicar a fonte */
+        }
+
+        /* Estilos para a imagem de fundo do cabeçalho */
+        .background-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para a logo com fade */
+        #logo {
+            position: absolute;
+            top: 40%; /* Ajuste o valor para centralizar verticalmente */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centralizar tanto vertical quanto horizontalmente */
+            opacity: 0;
+            animation: fade 2s ease-in-out forwards;
+            max-width: 25%; /* Defina a largura máxima da logo */
+            height: auto; /* Mantenha a proporção da imagem */
+        }
+
+        /* Animação de fade */
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Imagem de fundo do cabeçalho -->
+        <img class="background-img" src="/Users/samuelcabral/Desktop/Componentes site/Assets/Asset 17.png" alt="Imagem de Fundo do Cabeçalho">
+
+        <!-- Logo com efeito fade -->
+        <img id="logo" src="/Users/samuelcabral/Desktop/Componentes site/Assets/Logo nova.png" alt="Minha Logo">
+        
+        <h1><strong>Bem-vindo ao meu site</strong></h1>
+        <p>Estamos em obras, mas voltaremos em breve! Aguarde!</p>
+    </header>
+
+    <!-- Conteúdo do corpo do site viria aqui -->
+
+</body>
+</html>
