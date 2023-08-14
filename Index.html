@@ -28,18 +28,16 @@
             border-radius: 0; /* Sem bordas arredondadas */
         }
 
-        /* Estilos para o cabeçalho */
-        header {
+        /* Estilos para o cabeçalho (hero section) */
+        .hero {
             background-color: #000000; /* Fundo preto */
             text-align: center;
-            padding: 20px;
-            position: fixed; /* Fixando o cabeçalho no topo */
+            padding: 100px 20px; /* Espaçamento interno superior e inferior */
             width: 100%;
-            top: 0; /* Cobrindo toda a superfície superior */
-            z-index: 1; /* Garantindo que o cabeçalho fique na frente do conteúdo */
+            z-index: 1; /* Garantindo que a hero section fique na frente do conteúdo */
         }
 
-        /* Estilos para a imagem de fundo do cabeçalho */
+        /* Estilos para a imagem de fundo da hero section */
         .background-img {
             max-width: 100%;
             height: auto;
@@ -47,16 +45,16 @@
 
         /* Estilos para a logo com fade e glow */
         #logo {
-            position: absolute;
-            top: 50%; /* Centralizando verticalmente */
-            left: 50%; /* Centralizando horizontalmente */
-            transform: translate(-50%, -50%);
             max-width: 25%;
             height: auto;
             filter: brightness(1); /* Remover brilho inicial */
             opacity: 0; /* Ocultar logo inicialmente */
             transition: filter 0.3s, opacity 1s, box-shadow 0.3s;
             animation: fade-in 2s ease-in-out forwards; /* Efeito de fade-in */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         /* Efeito fade-in da logo */
@@ -81,13 +79,13 @@
 
         /* Estilos para o menu */
         nav {
+            text-align: center; /* Centralizar o conteúdo */
+            font-size: 18px;
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 100%; /* Largura total */
-            text-align: center; /* Centralizar o conteúdo */
-            font-size: 18px;
         }
 
         nav ul {
@@ -115,20 +113,20 @@
             color: #ffffff80; /* Cor com transparência para o efeito de hover */
         }
 
-        /* Estilos para o conteúdo abaixo do cabeçalho */
+        /* Estilos para o conteúdo abaixo da hero section */
         .content {
-            margin-top: 300px; /* Espaçamento superior para evitar que fique ocultado pelo cabeçalho fixo */
+            margin-top: 100px; /* Espaçamento superior para evitar que fique ocultado pela hero section */
             text-align: center;
         }
 
         .content h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
+            font-size: 70px;
         }
 
         .content h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
+            font-size: 20px;
             margin-top: 10px;
         }
 
@@ -139,13 +137,10 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <!-- Imagem de fundo do cabeçalho -->
-        <img class="background-img" src="Assets/Asset 17.png" alt="Imagem de Fundo do Cabeçalho">
-
+    <!-- Hero Section -->
+    <div class="hero">
         <!-- Logo com efeito fade e glow -->
-        <img id="logo" class="loaded" src="Assets/Logo nova.png" alt="Logo nova.png">
+        <img id="logo" class="loaded" src="Assets/Emblema para o canal.png" alt="Logo nova.png">
 
         <!-- Menu -->
         <nav>
@@ -156,14 +151,72 @@
                 <li><a href="#">Produtos</a></li>
             </ul>
         </nav>
-    </header>
+
+        <!-- Imagem de fundo da hero section -->
+        <img class="background-img" src="Assets/Asset 17.png" alt="Imagem de Fundo da Hero Section">
+    </div>
     
     <!-- Conteúdo do corpo do site -->
     <div class="content">
         <h1>Bem-vindos ao meu site</h1>
         <h2>Estamos em obras</h2>
         <p class="emoji">🛠️</p>
+
+        <p>O que eu faço? </p>
+
+        <h2>Meus Serviços</h2>
+        <p>Ofereço uma variedade de serviços incríveis para atender às suas necessidades.</p>
+        <ul style="list-style: none; padding-left: 0;">
+            <li>Música & Composição</li>
+
+
+            <li>Ilustração</li>
+
+
+
+            <li>Aulas: Universo das Cordas</li>
+        </ul>
+
+        <h2>Minha Experiência</h2>
+        <p></p>
+        <p>Tenho trabalhado na indústria por muitos anos e adquiri habilidades valiosas.
+        </p>Sou violonista de formação mas já atuei no ramo da produção musical de diversos artistas. 
+        </p>Cheque a minha BIO para mais. 
+
+            Meu ID na internet (quase todos as redes sociais e sites é @osamucabral)
+        </p>
+
+
+
+        <h2>Contato</h2>
+        <p>Entre em contato comigo através do meu email: contatosamuelcabral@gmail.com</p>
     </div>
 
 </body>
+<!-- Rodapé (Footer) -->
+<footer>
+    <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+        <div class="footer-logo">
+            <img src="Assets/Logo nova.png" alt="Logo da Empresa" style="width: 8.5vw; margin-top: 20px;">
+        </div>
+        <div class="footer-social" style="text-align: right;">
+            <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                <li><a href="#"><img src="Assets/Apoia.se.png" alt="Apoia.se" style="width: 5vw;" onmouseover="this.style.filter='brightness(1.4)';" onmouseout="this.style.filter='brightness(1)';"></a></li>
+                <li><a href="#"><img src="Assets/Youtube.png" alt="Youtube" style="width: 5vw;" onmouseover="this.style.filter='brightness(1.4)';" onmouseout="this.style.filter='brightness(1)';"></a></li>
+                <li><a href="#"><img src="Assets/Instagram.png" alt="Instagram" style="width: 5vw;" onmouseover="this.style.filter='brightness(1.4)';" onmouseout="this.style.filter='brightness(1)';"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" style="background-color: #000000; text-align: center; padding: 10px;">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 18px;">
+            Contato: contato@empresa.com | Telefone: +55 975350590
+            <br>
+            &copy; 2023 Samuel Cabral
+        </div>
+    </div>
+</footer>
+
+
+
+
 </html>
